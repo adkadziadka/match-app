@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+#use Devise
+gem 'devise', '~> 4.2'
 # using Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 # use jQuery
