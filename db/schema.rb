@@ -32,16 +32,9 @@ ActiveRecord::Schema.define(version: 20170606132641) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.bigint "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_profiles_on_student_id"
-  end
-
   create_table "students", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.string "name", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -57,5 +50,4 @@ ActiveRecord::Schema.define(version: 20170606132641) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "profiles", "students"
 end
