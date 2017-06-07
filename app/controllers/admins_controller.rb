@@ -5,6 +5,10 @@ class AdminsController < ApplicationController
 	end
 
 	def show
-		@students =Students.all
+		
+	end
+
+	private
+
 
 end

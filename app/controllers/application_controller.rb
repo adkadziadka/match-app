@@ -6,10 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    case resource
-    when Student then 'shared/student'
-    when Admin then 'shared/admin'
-    end
+
   end
 
 
