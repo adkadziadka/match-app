@@ -4,7 +4,8 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">YourDailyMatch</a>
+      <%= link_to "YourDailyMatch", root_path, class: "navbar-brand" %>
+
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -12,10 +13,17 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to " SignUp", new_student_registration_path, class: "glyphicon glyphicon-user" %></li>
-      <li><%= link_to " LoginAsStudent", new_student_session_path, class: "glyphicon glyphicon-log-in" %></li>
-      <li><%= link_to " LoginAsAdmin", new_admin_session_path, class: "glyphicon glyphicon-log-in" %></li>
+      
+        <!-- different navbars -->
 
+      <% if student_signed_in? %>
+          <%= render 'shared/student' %>
+      <% elsif admin_signed_in? %>
+          <%= render 'shared/admin' %>
+      <% else %>
+          <%= render 'shared/navbar' %>
+      <% end %>
+   
     </ul>
   </div>
 </nav>

@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170607085946) do
   end
 
   create_table "students", force: :cascade do |t|
+    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
