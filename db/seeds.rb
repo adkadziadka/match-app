@@ -1,3 +1,3 @@
-admin = Admin.create!(email: 'admin@admin.com', password: '1234qwerty')
+admin = Admin.create!(email: 'omar@admin.com', password: '1234qwerty')
 
-student1 = Student.create!(email: 'student@student.com', password: '1234qwerty', name: 'Omar')
+student1 = Student.create!(email: 'omar@student.com', password: '1234qwerty', name: 'Omar')
