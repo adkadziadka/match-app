@@ -1,7 +1,3 @@
-<h1>All students:</h1>
 
-<div>
-  <% @student.each do |student| %>
-  <% student.name %>
-  <% end %>
-</div>
+<%= render 'models/match.rb' %>
+<button type="button"><%= link_to 'Generate', round_robin_tournament/lib/round_robin_tournament/match.rb %></button>

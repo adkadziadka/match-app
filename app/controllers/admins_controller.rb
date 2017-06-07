@@ -1,7 +1,11 @@
 class AdminsController < ApplicationController
 
 	def index
-		@students = Students.all
+		@students = Students.find(params[:id])
+	end
+
+	def show
+		@students = Student.all
 	end
 
 	def promote
@@ -9,5 +13,6 @@ class AdminsController < ApplicationController
 
 	def demote
 	end
+
 
 end
