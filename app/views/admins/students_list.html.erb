@@ -2,6 +2,12 @@
 
 <% @students.each do |student| %>
 <%= student.name %> 
-	<button>
-	</button>
+<button>
+	<% if student.admin %>
+		<%= link_to 'Upgrade', upgrade_path(student_id: student.id) %>
+	<% else %>
+		<%= link_to 'Downgrade', upgrade_path(student_id: student.id) %>
+	<% end %>
+</button>
+<br>
 <% end %>
