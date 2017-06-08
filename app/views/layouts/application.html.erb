@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "YourDailyMatch", root_path, class: "navbar-brand" %>
+
+    </div>
+    <div class="nav navbar-nav logged">
+      <% if student_signed_in? %>
+          <li><h4> You are logged as a<strong> Student</strong></h4></li>
+          <% elsif admin_signed_in? %>
+          <li> You are logged as an<strong> Admin</strong></li>
+          <% else %>
+          <li></li>
+          <% end %>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      
+        <!-- different navbars -->
+      <% if student_signed_in? %>
+        <%= render 'shared/student' %>
+      <% elsif admin_signed_in? %>
+        <%= render 'shared/admin' %>
+      <% else %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+   
+    </ul>
+  </div>
+</nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+
