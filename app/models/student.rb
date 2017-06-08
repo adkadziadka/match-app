@@ -8,4 +8,8 @@ class Student < ApplicationRecord
   validates :name, presence: true, uniqueness: true, length: { maximum: 50}
   validates :password, presence: true, length: { minimum: 6}
 
+  def change_status
+  	update_columns(admin: admin ? false : true)
+  end
+
  end
