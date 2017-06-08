@@ -3,4 +3,9 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def change_status
+  	self.admin = self.admin ? false : true
+	save
+  end
 end

@@ -1,3 +1,8 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "bootstrap/theme";
+@import "bootstrap";
+
+
+.logged{
+	margin: 5px;
+	color: darkgrey;
+}

@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
 <body>
   <!-- Static navbar -->
 <nav class="navbar navbar-default">
@@ -7,21 +8,24 @@
       <%= link_to "YourDailyMatch", root_path, class: "navbar-brand" %>
 
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-    </ul>
+    <div class="nav navbar-nav logged">
+      <% if student_signed_in? %>
+          <li><h4> You are logged as a<strong> Student</strong></h4></li>
+          <% elsif admin_signed_in? %>
+          <li> You are logged as an<strong> Admin</strong></li>
+          <% else %>
+          <li></li>
+          <% end %>
+    </div>
     <ul class="nav navbar-nav navbar-right">
       
         <!-- different navbars -->
-
       <% if student_signed_in? %>
-          <%= render 'shared/student' %>
+        <%= render 'shared/student' %>
       <% elsif admin_signed_in? %>
-          <%= render 'shared/admin' %>
+        <%= render 'shared/admin' %>
       <% else %>
-          <%= render 'shared/navbar' %>
+        <%= render 'shared/navbar' %>
       <% end %>
    
     </ul>
