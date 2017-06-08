@@ -1,3 +1,15 @@
-<li><%= link_to " SignUp", new_student_registration_path, class: "glyphicon glyphicon-user" %></li>
-<li><%= link_to " LoginAsStudent", new_student_session_path, class: "glyphicon glyphicon-log-in" %></li>
-<li><%= link_to " LoginAsAdmin", new_admin_session_path, class: "glyphicon glyphicon-log-in" %></li>
+<% if current_student.present? %>
+	<% if current_student.admin %> 
+		<li><%= link_to "Overview", admins_path %></li>
+		<li><%= link_to "StudentList", students_list_path %></li>
+	<% end %>
+	<li><%= link_to "Log out", destroy_student_session_path, method: :delete %></li>
+<% elsif current_admin.present? %> 
+	<li><%= link_to "Overview", admins_path %></li>
+	<li><%= link_to "StudentList", students_list_path %></li>
+	<li><%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+<% else %> 
+	<li><%= link_to " SignUp", new_student_registration_path, class: "glyphicon glyphicon-user" %></li>
+	<li><%= link_to " LoginAsStudent", new_student_session_path, class: "glyphicon glyphicon-log-in" %></li>
+	<li><%= link_to " LoginAsAdmin", new_admin_session_path, class: "glyphicon glyphicon-log-in" %></li>
+<% end %> 

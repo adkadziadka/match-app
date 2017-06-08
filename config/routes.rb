@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  devise_for :students
+  devise_for :students 
   devise_for :admins
 
   get 'admins/students_list' => 'admins#students_list', as: :students_list
