@@ -4,7 +4,15 @@ class StudentsController < ApplicationController
 		@students = Student.all
 	end
 
-	private
+	def upgrade
+		student = Student.find(params[:id])
+		student.upgrade( :admin => true )
+			redirect_to admins_path
+		else
+			render 'edit'
+		end
+	end
 
+	private
 
 end

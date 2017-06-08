@@ -12,22 +12,13 @@
       <% if student_signed_in? %>
           <li><h4> You are logged as a<strong> Student</strong></h4></li>
           <% elsif admin_signed_in? %>
-          <li> You are logged as an<strong> Admin</strong></li>
+          <li><h4> You are logged as an<strong> Admin</strong></h4></li>
           <% else %>
-          <li></li>
+        
           <% end %>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      
-        <!-- different navbars -->
-      <% if student_signed_in? %>
-        <%= render 'shared/student' %>
-      <% elsif admin_signed_in? %>
-        <%= render 'shared/admin' %>
-      <% else %>
-        <%= render 'shared/navbar' %>
-      <% end %>
-   
+      <%= render 'shared/navbar' %>   
     </ul>
   </div>
 </nav>

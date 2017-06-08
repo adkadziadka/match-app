@@ -8,4 +8,5 @@ class Student < ApplicationRecord
   	self.admin = self.admin ? false : true
 	save
   end
-end
+
+ end
