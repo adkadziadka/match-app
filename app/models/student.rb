@@ -4,9 +4,12 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :email, presence: true, uniqueness: true, length: { maximum: 50}
+  validates :name, presence: true, uniqueness: true, length: { maximum: 50}
+  validates :password, presence: true, length: { minimum: 6}
+
   def change_status
-  	self.admin = self.admin ? false : true
-	save
+  	update_columns(admin: admin ? false : true)
   end
 
  end
