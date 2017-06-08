@@ -61,3 +61,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
 end
+
+gem 'round_robin_tournament'
