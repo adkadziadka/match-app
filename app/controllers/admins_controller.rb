@@ -1,7 +1,8 @@
 class AdminsController < ApplicationController
 
 	def index
-		@students = Student.all
+		@students = Student.select(:name).map(&:name)
+		@teams = RoundRobinTournament.schedule(@students)
 	end
 
 	def students_list
