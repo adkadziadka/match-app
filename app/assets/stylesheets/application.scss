@@ -1,8 +1,68 @@
 @import "bootstrap/theme";
 @import "bootstrap";
 
+body{
+	background-image: url("http://res.cloudinary.com/adrianna1990/image/upload/v1496988233/ignasi_pattern_s_ebxwax.png");
+	margin-bottom: 50px;
+	}
 
 .logged{
 	margin: 5px;
 	color: darkgrey;
+}
+
+.notice{
+	text-align: center;
+	margin: 0 auto;
+	width: 300px;
+	padding: 10px;
+}
+
+.container{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.welcome{
+	top: 150px;
+	margin:0 auto;
+	border: 5px solid black;
+	border-radius: 3px;
+	padding: 50px;
+	width: 600px;
+	-webkit-box-shadow: 0px 0px 86px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 86px -5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 86px -5px rgba(0,0,0,0.75);
+}
+
+h1{
+	font-family: 'Bubbler One', sans-serif;
+	font-size: 50px;
+}
+
+.form-control{
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.forms-container{
+	margin: 0 auto;
+	width: 600px;
+	-webkit-box-shadow: 0px 0px 86px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 86px -5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 86px -5px rgba(0,0,0,0.75);
+	padding: 50px;
+	border-radius: 3px;
+}
+
+.main button .btn-up{
+	margin-left: 50px;
+	right: 0px;
+}
+
+.main{
+	font-size: 15px;
+	font-weight: 600;
+	width:300px;
+	margin: 0 auto;
 }
