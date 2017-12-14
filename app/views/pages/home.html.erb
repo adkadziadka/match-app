@@ -1,9 +1,16 @@
 <% if student_signed_in? %>
 <%= render 'students/show-today-match' %>
-
+<% elsif admin_signed_in? %>
+<div class="welcome">
+<h1> You're so welcome!</h1>
+<br>
+<%= link_to "Generate", admins_path, class: "generate" %>
+</div>
 <% else %>
 <div class="welcome">
 <h1>Your<strong>Daily</strong>Match</h1>
 <h2> You're so welcome! </h2>
 </div>
 <% end %>
+
+

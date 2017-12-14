@@ -1,7 +1,13 @@
-<h1>Matches<strong> Overview</strong>:</h1>
+<h1>Matches<strong>Overview</strong>:</h1>
+<hr>
+<br>
 
+<% @teams.each_with_index do |day, index| %>
+		<% day_teams = day.map { |team| "(#{team.first}, #{team.last})" }.join(', ') %>
 
-
-
-
+		<% concat "Day #{index + 1}: #{day_teams}" %>
+		<br>
+		<br>
+		<br>
+	<% end %>
 
